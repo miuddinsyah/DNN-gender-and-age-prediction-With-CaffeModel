@@ -9,18 +9,6 @@
 
 Proyek ini mengembangkan sistem prediksi usia dan gender menggunakan Convolutional Neural Network (CNN) berbasis framework **Caffe**. Sistem ini dirancang untuk memproses gambar secara **real-time**, baik melalui aplikasi desktop berbasis **Tkinter** maupun antarmuka web menggunakan **Flask**.
 
-## 📑 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Deployment Options](#deployment-options)
-- [Results](#results)
-- [Contributors](#contributors)
-- [License](#license)
-
----
 
 ## 🌟 Overview
 
