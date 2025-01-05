@@ -1,10 +1,11 @@
-
-
-Berikut adalah draf README untuk proyek prediksi usia dan gender berbasis Deep Learning yang menggunakan framework seperti Caffe dan Flask:
-
+# Age and Gender Prediction Using Deep Learning
 ---
 
-# Age and Gender Prediction Using Deep Learning
+## 👥 Contributors
+
+- **Azmi Taqiuddin Syah** - 1103213078
+- **Kivlan Hakeem Arrouf** - 1103210373
+- **Muhammad Abi Kurniawan** - 1103210041
 
 Proyek ini mengembangkan sistem prediksi usia dan gender menggunakan Convolutional Neural Network (CNN) berbasis framework **Caffe**. Sistem ini dirancang untuk memproses gambar secara **real-time**, baik melalui aplikasi desktop berbasis **Tkinter** maupun antarmuka web menggunakan **Flask**.
 
@@ -124,10 +125,4 @@ Arsitektur CNN dioptimalkan untuk bekerja dengan dataset yang mencakup berbagai 
   - Prediksi gender: 75%
 - Kesalahan sering terjadi pada rentang usia berdekatan atau kategori "Female" karena ketidakseimbangan dataset.
 
----
 
-## 👥 Contributors
-
-- **Azmi Taqiuddin Syah** - 1103213078
-- **Kivlan Hakeem Arrouf** - 1103210373
-- **Muhammad Abi Kurniawan** - 1103210041
