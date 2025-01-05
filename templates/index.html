@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Age & Gender Detection</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        img {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Face Age & Gender Detection</h1>
+        <div>
+            <img src="{{ url_for('video_feed') }}" width="{{ width }}" height="{{ height }}" id="videoFeed" style="display: none;">
+        </div>
+        <button onclick="toggleCamera()" id="cameraButton">{{ 'Turn Off Camera' if camera_active else 'Open Camera' }}</button>
+        <button onclick="switchCamera()">Switch Camera</button>
+    </div>
+    <script>
+        function toggleCamera() {
+            fetch('/toggle_camera', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload();
+                    }
+                });
+        }
+
+        function switchCamera() {
+            fetch('/switch_camera', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload();
+                    }
+                });
+        }
+
+        // Show or hide the video feed based on the camera state
+        document.addEventListener('DOMContentLoaded', function() {
+            const cameraActive = {{ 'true' if camera_active else 'false' }};
+            const videoFeed = document.getElementById('videoFeed');
+            const cameraButton = document.getElementById('cameraButton');
+            if (cameraActive) {
+                videoFeed.style.display = 'block';
+                cameraButton.textContent = 'Turn Off Camera';
+            } else {
+                videoFeed.style.display = 'none';
+                cameraButton.textContent = 'Open Camera';
+            }
+        });
+    </script>
+</body>
+</html>
